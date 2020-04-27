@@ -1,0 +1,21 @@
+{
+    "name": "prawas/symfony-bundle-skeleton",
+    "description": "",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "homepage": "https://github.com/prawas/eshop-params",
+    "authors": [
+        {
+            "name": "prawas",
+            "email": "sprawas@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "symfony/framework-bundle": "4.4.*",
+        "symfony/yaml": "4.4.*"
+    },
+    "autoload": {
+        "psr-4": { "YOUR\\BUNDLE\\": "" }
+    }
+}
