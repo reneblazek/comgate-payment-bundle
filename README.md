@@ -1,3 +1,77 @@
-## Symfony Bundle Skeleton
+## Symfony Bundle
 
-A skeleton for an empty Symfony 4.4 Bundle
+A symfony bundle for Comgate payments
+
+This repository is the Symfony bundle based on the [PHP library](https://github.com/acmephp/core).
+
+Installation
+------------
+
+### Step 1: Download AcmePhpBundle using composer
+
+Require the `reneblazek/comgate-payment-bundle` with composer [Composer](http://getcomposer.org/).
+
+```bash
+$ composer require reneblazek/comgate-payment-bundle
+```
+
+### Step 2: Enable the bundle
+
+Enable the bundle in the kernel:
+
+```php
+<?php
+
+// app/AppKernel.php
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new Mufin\ComgateBundle\MufinComgateBundle(),
+        // ...
+    );
+}
+```
+
+### Step 3: Configure the MufinComgateBundle
+
+Below is a minimal example of the configuration necessary to use the
+`MufinComgateBundle` in your application:
+
+```yml
+# .env
+
+###> mufin/comgate-bundle ###
+MERCHANT_ID="your merchant id"
+SECRET_KEY="secret key from comgate dashboard"
+TEST_MODE=false
+###< mufin/comgate-bundle ###
+```
+
+### Step 4: Usage of MufinComgateBundle
+
+```php
+# CartController
+
+/**
+     * @Route("/cart/payment", name="cart_payment")
+     * @param ComgateConnector $comgate
+     * @param Request
+     * @return Response
+     */
+    public function payment(ComgateConnector $comgate): Response
+    {
+        
+        $payment = new CreatePayment('PRICE', 'Your order ID', $this->getUser()->getEmail(), 'Some product');
+        // to create payment on background according to API requirements
+        $payment->setPrepareOnly(true);
+        $response = $comgate->send($payment);
+        if($response->getMessage()=="OK"){
+            // do something with cart
+            return $this->redirect($response->getRedirectUrl());
+        }
+
+        return $this->render('cart/payment.html.twig', []);
+    }
+
+```
