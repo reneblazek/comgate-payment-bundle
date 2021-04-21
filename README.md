@@ -7,7 +7,7 @@ This repository is the Symfony bundle based on the [PHP library](https://github.
 Installation
 ------------
 
-### Step 1: Download AcmePhpBundle using composer
+### Step 1: Download MufinComgateBundle using composer
 
 Require the `mufin/comgate-bundle` with composer [Composer](http://getcomposer.org/).
 
