@@ -9,10 +9,10 @@ Installation
 
 ### Step 1: Download AcmePhpBundle using composer
 
-Require the `reneblazek/comgate-payment-bundle` with composer [Composer](http://getcomposer.org/).
+Require the `mufin/comgate-bundle` with composer [Composer](http://getcomposer.org/).
 
 ```bash
-$ composer require reneblazek/comgate-payment-bundle
+$ composer require mufin/comgate-bundle
 ```
 
 ### Step 2: Enable the bundle
