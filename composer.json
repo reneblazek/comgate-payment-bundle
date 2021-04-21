@@ -1,13 +1,13 @@
 {
-    "name": "prawas/symfony-bundle-skeleton",
+    "name": "mufin/comgate-bundle",
     "description": "",
     "type": "symfony-bundle",
     "license": "MIT",
-    "homepage": "https://github.com/prawas/eshop-params",
+    "homepage": "https://github.com/mufinsk",
     "authors": [
         {
-            "name": "prawas",
-            "email": "sprawas@gmail.com"
+            "name": "Mufin, s.r.o.",
+            "email": "info@mufin.sk"
         }
     ],
     "require": {
@@ -16,6 +16,6 @@
         "symfony/yaml": "4.4.*"
     },
     "autoload": {
-        "psr-4": { "YOUR\\BUNDLE\\": "" }
+        "psr-4": { "Mufin\\ComgateBundle\\": "" }
     }
 }

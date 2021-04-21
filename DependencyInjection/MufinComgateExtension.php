@@ -1,13 +1,13 @@
 <?php
 
-namespace YOUR\BUNDLE\DependencyInjection;
+namespace Mufin\ComgateBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class YourBundleExtension extends Extension
+class MufinComgateExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -15,6 +15,7 @@ class YourBundleExtension extends Extension
             $container,
             new FileLocator(__DIR__.'/../Resources/config')
         );
+
         $loader->load('services.yaml');
     }
 }
