@@ -2,8 +2,6 @@
 
 A symfony bundle for Comgate payments
 
-This repository is the Symfony bundle based on the [PHP library](https://github.com/acmephp/core).
-
 Installation
 ------------
 
